@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikorodu Tech Fair 2026 - Connecting Innovation, Building Tomorrow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #059669 100%);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(5, 150, 105, 0.8));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .hero-image-outline {
+            outline: 3px dotted black;
+            outline-offset: 4px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #059669;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #059669 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #059669;
+            color: #059669;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #059669;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .speaker-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .schedule-item {
+            border-left: 4px solid #059669;
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .sponsor-logo {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        
+        .sponsor-logo:hover {
+            filter: grayscale(0%);
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .countdown-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-microchip text-2xl text-blue-700 mr-2"></i>
+                    <span class="text-xl font-bold text-gray-800">Ikorodu Tech Fair 2026</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-green-600 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-green-600 font-medium">About</a>
+                    <a href="#speakers" class="nav-link text-gray-700 hover:text-green-600 font-medium">Speakers</a>
+                    <a href="#schedule" class="nav-link text-gray-700 hover:text-green-600 font-medium">Schedule</a>
+                    <a href="#tickets" class="nav-link text-gray-700 hover:text-green-600 font-medium">Tickets</a>
+                    <a href="#sponsors" class="nav-link text-gray-700 hover:text-green-600 font-medium">Sponsors</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg hidden">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-green-600">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-green-600">About</a>
+                <a href="#speakers" class="block py-2 text-gray-700 hover:text-green-600">Speakers</a>
+                <a href="#schedule" class="block py-2 text-gray-700 hover:text-green-600">Schedule</a>
+                <a href="#tickets" class="block py-2 text-gray-700 hover:text-green-600">Tickets</a>
+                <a href="#sponsors" class="block py-2 text-gray-700 hover:text-green-600">Sponsors</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center gradient-bg">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="hero-title text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Ikorodu Tech Fair 2026
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-4 text-blue-100">
+                        Connecting Innovation, Building Tomorrow
+                    </p>
+                    <p class="text-lg mb-8 text-blue-100">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        April 6, 2026 | Ikorodu, Lagos State
+                    </p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold mb-4">Event Countdown</h3>
+                        <div class="countdown-container grid grid-cols-4 gap-4 max-w-md">
+                            <div class="countdown-item text-center p-4 rounded-lg">
+                                <div id="days" class="text-2xl font-bold">000</div>
+                                <div class="text-sm">Days</div>
+                            </div>
+                            <div class="countdown-item text-center p-4 rounded-lg">
+                                <div id="hours" class="text-2xl font-bold">00</div>
+                                <div class="text-sm">Hours</div>
+                            </div>
+                            <div class="countdown-item text-center p-4 rounded-lg">
+                                <div id="minutes" class="text-2xl font-bold">00</div>
+                                <div class="text-sm">Minutes</div>
+                            </div>
+                            <div class="countdown-item text-center p-4 rounded-lg">
+                                <div id="seconds" class="text-2xl font-bold">00</div>
+                                <div class="text-sm">Seconds</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://forms.gle/example-registration-link" target="_blank" class="btn-primary inline-flex items-center px-8 py-4 rounded-lg font-semibold text-white text-lg">
+                            <i class="fas fa-ticket-alt mr-2"></i>
+                            Register Now
+                        </a>
+                        <a href="#schedule" class="btn-secondary inline-flex items-center px-8 py-4 rounded-lg font-semibold text-lg">
+                            <i class="fas fa-calendar mr-2"></i>
+                            View Schedule
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:text-right">
+                    <img src="https://placehold.co/600x400/1e40af/ffffff?text=Diverse+African+Tech+Professionals+at+Conference" 
+                         alt="Diverse group of African technology professionals networking and collaborating at a modern tech conference, featuring people of various ages and backgrounds engaged in meaningful discussions about innovation and technology" 
+                         class="hero-image-outline rounded-lg shadow-2xl w-full max-w-lg mx-auto lg:mx-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">About Ikorodu Tech Fair 2026</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Join us for the most anticipated technology event in Lagos State, where innovation meets opportunity and the future of African tech takes center stage.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Empowering Tech Innovation in Ikorodu</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The Ikorodu Tech Fair 2026 is more than just a conference – it's a catalyst for technological transformation in our community. We bring together industry leaders, emerging startups, students, and tech enthusiasts to share knowledge, forge partnerships, and drive innovation forward.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our mission is to position Ikorodu as a leading tech hub in Lagos State while providing a platform for local talent to connect with global opportunities. Experience cutting-edge technology demonstrations, insightful workshops, and networking opportunities that will shape your tech journey.
+                    </p>
+                    <div class="flex items-center text-green-600">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span class="font-semibold">Ikorodu, Lagos State, Nigeria</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://placehold.co/500x400/059669/ffffff?text=Tech+Exhibition+and+Networking+Activities" 
+                         alt="Dynamic technology exhibition space showing interactive displays, innovative tech products, and attendees exploring cutting-edge solutions while networking and learning about the latest technological advances" 
+                         class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+            
+            <!-- Statistics -->
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="card-hover bg-blue-50 p-8 rounded-lg">
+                    <div class="text-4xl font-bold text-blue-700 mb-2">2,000+</div>
+                    <div class="text-gray-600 font-medium">Expected Attendees</div>
+                </div>
+                <div class="card-hover bg-green-50 p-8 rounded-lg">
+                    <div class="text-4xl font-bold text-green-700 mb-2">10+</div>
+                    <div class="text-gray-600 font-medium">Expert Speakers</div>
+                </div>
+                <div class="card-hover bg-blue-50 p-8 rounded-lg">
+                    <div class="text-4xl font-bold text-blue-700 mb-2">50+</div>
+                    <div class="text-gray-600 font-medium">Tech Exhibitors</div>
+                </div>
+                <div class="card-hover bg-green-50 p-8 rounded-lg">
+                    <div class="text-4xl font-bold text-green-700 mb-2">10+</div>
+                    <div class="text-gray-600 font-medium">Hands-on Workshops</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Speaker Section -->
+    <section id="speakers" class="section-padding bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Featured Speaker</h2>
+                <p class="text-xl text-gray-600">Learn from industry leaders shaping the future of technology</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="speaker-card card-hover rounded-2xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="text-center">
+                            <img src="https://placehold.co/300x300/1e40af/ffffff?text=Damilola+Ogunfile+CEO" 
+                                 alt="Professional headshot of Damilola Ogunfile, CEO of KaduTech Nigeria, a visionary African technology leader known for driving innovation in the Nigerian tech ecosystem" 
+                                 class="w-48 h-48 rounded-full mx-auto mb-4 shadow-lg">
+                            <div class="text-2xl font-bold text-gray-800">Damilola Ogunfile</div>
+                            <div class="text-green-600 font-semibold mb-2">CEO, KaduTech Nigeria</div>
+                            <div class="flex justify-center space-x-4">
+                                <a href="#" class="text-blue-600 hover:text-blue-800">
+                                    <i class="fab fa-linkedin text-xl"></i>
+                                </a>
+                                <a href="#" class="text-blue-400 hover:text-blue-600">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Keynote: "Building Scalable Tech Solutions for Africa"</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Join Damilola Ogunfile, the visionary CEO of KaduTech Nigeria, as he shares insights on building technology solutions that scale across African markets. With over a decade of experience in the Nigerian tech ecosystem, Damilola will discuss the challenges and opportunities in creating sustainable tech businesses that serve local communities while competing globally.
+                            </p>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Key Topics:</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Scaling tech startups in emerging markets</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Building products for African consumers</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Funding strategies for African tech companies</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>The future of fintech in Nigeria</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Event Schedule</h2>
+                <p class="text-xl text-gray-600">A full day of learning, networking, and innovation</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="schedule-item bg-gray-50 p-6 rounded-lg pl-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <div class="text-green-600 font-semibold text-lg">8:00 AM - 9:00 AM</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Registration & Welcome Coffee</h3>
+                                <p class="text-gray-600">Network with fellow attendees and grab refreshments</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Networking</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item bg-gray-50 p-6 rounded-lg pl-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <div class="text-green-600 font-semibold text-lg">9:00 AM - 10:00 AM</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Opening Ceremony & Keynote</h3>
+                                <p class="text-gray-600">Damilola Ogunfile - "Building Scalable Tech Solutions for Africa"</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Keynote</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item bg-gray-50 p-6 rounded-lg pl-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <div class="text-green-600 font-semibold text-lg">10:15 AM - 11:45 AM</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Panel Discussion: Future of Fintech in Nigeria</h3>
+                                <p class="text-gray-600">Industry leaders discuss digital payments and financial inclusion</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Panel</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item bg-gray-50 p-6 rounded-lg pl-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <div class="text-green-600 font-semibold text-lg">12:00 PM - 1:00 PM</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Networking Lunch & Exhibition</h3>
+                                <p class="text-gray-600">Explore tech exhibitions while enjoying lunch</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Exhibition</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item bg-gray-50 p-6 rounded-lg pl-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <div class="text-green-600 font-semibold text-lg">1:00 PM - 3:00 PM</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Parallel Workshops</h3>
+                                <p class="text-gray-600">Choose from AI/ML, Web Development, Mobile Apps, or Cybersecurity</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Workshops</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item bg-gray-50 p-6 rounded-lg pl-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <div class="text-green-600 font-semibold text-lg">3:15 PM - 4:15 PM</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Startup Pitch Competition</h3>
+                                <p class="text-gray-600">Local startups compete for funding and mentorship opportunities</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Competition</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item bg-gray-50 p-6 rounded-lg pl-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <div class="text-green-600 font-semibold text-lg">4:30 PM - 5:30 PM</div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Closing Ceremony & Awards</h3>
+                                <p class="text-gray-600">Recognition of outstanding contributions and closing remarks</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Ceremony</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tickets Section -->
+    <section id="tickets" class="section-padding bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Choose Your Ticket</h2>
+                <p class="text-xl text-gray-600">Select the perfect package for your tech journey</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Student Ticket -->
+                <div class="pricing-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Student Pass</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">₦5,000</div>
+                        <div class="text-gray-500">Perfect for students</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Full conference access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Lunch and refreshments</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Workshop participation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Networking opportunities</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Digital certificate</span>
+                        </li>
+                    </ul>
+                    <a href="https://forms.gle/example-registration-link" target="_blank" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 block text-center">
+                        Register Now
+                    </a>
+                    <div class="text-center mt-4 text-sm text-gray-500">
+                        *Valid student ID required
+                    </div>
+                </div>
+                
+                <!-- Regular Ticket -->
+                <div class="pricing-card bg-white rounded-2xl p-8 shadow-lg border-2 border-green-500 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Regular Pass</h3>
+                        <div class="text-4xl font-bold text-green-600 mb-2">₦15,000</div>
+                        <div class="text-gray-500">For professionals</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Full conference access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Lunch and refreshments</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>All workshop access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Premium networking</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Digital resources</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Conference swag bag</span>
+                        </li>
+                    </ul>
+                    <a href="https://forms.gle/example-registration-link" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 block text-center">
+                        Register Now
+                    </a>
+                </div>
+                
+                <!-- VIP Ticket -->
+                <div class="pricing-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">VIP Pass</h3>
+                        <div class="text-4xl font-bold text-purple-600 mb-2">₦35,000</div>
+                        <div class="text-gray-500">Premium experience</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>All Regular Pass benefits</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>VIP seating area</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Exclusive speaker meet & greet</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Premium lunch experience</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Priority workshop booking</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <span>Exclusive VIP networking</span>
+                        </li>
+                    </ul>
+                    <a href="https://forms.gle/example-registration-link" target="_blank" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 block text-center">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Sponsors</h2>
+                <p class="text-xl text-gray-600">Partnering with industry leaders to make this event possible</p>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">Platinum Sponsors</h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <img src="https://placehold.co/300x150/1e40af/ffffff?text=TechCorp+Nigeria" 
+                             alt="TechCorp Nigeria logo - Leading technology solutions provider and platinum sponsor of Ikorodu Tech Fair 2026" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/300x150/059669/ffffff?text=InnovateLagos" 
+                             alt="InnovateLagos logo - Premier innovation hub and platinum sponsor supporting tech development in Lagos State" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">Gold Sponsors</h3>
+                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="text-center">
+                        <img src="https://placehold.co/250x120/6366f1/ffffff?text=StartupHub" 
+                             alt="StartupHub logo - Leading startup incubator and gold sponsor fostering entrepreneurship in Nigeria" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/250x120/dc2626/ffffff?text=CodeAcademy+NG" 
+                             alt="CodeAcademy NG logo - Premier coding education platform and gold sponsor training the next generation of developers" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/250x120/059669/ffffff?text=FinTech+Solutions" 
+                             alt="FinTech Solutions logo - Innovative financial technology company and gold sponsor driving digital payments in Nigeria" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">Silver Sponsors</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <img src="https://placehold.co/200x100/f59e0b/ffffff?text=CloudTech" 
+                             alt="CloudTech logo - Cloud computing services provider and silver sponsor enabling digital transformation" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/200x100/8b5cf6/ffffff?text=DataLabs" 
+                             alt="DataLabs logo - Data analytics and AI company providing insights and silver sponsor of the tech fair" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/200x100/ef4444/ffffff?text=MobileDev" 
+                             alt="MobileDev logo - Mobile app development company and silver sponsor creating innovative mobile solutions" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/200x100/10b981/ffffff?text=CyberSafe" 
+                             alt="CyberSafe logo - Cybersecurity solutions provider and silver sponsor protecting digital infrastructure" 
+                             class="sponsor-logo mx-auto mb-4 rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-6">Interested in sponsoring Ikorodu Tech Fair 2026?</p>
+                <a href="mailto:sponsors@ikorodutech.com" class="btn-primary inline-flex items-center px-8 py-3 rounded-lg font-semibold text-white">
+                    <i class="fas fa-handshake mr-2"></i>
+                    Become a Sponsor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Reminder Section -->
+    <section class="section-padding gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <img src="https://placehold.co/600x300/1e40af/ffffff?text=Ikorodu+City+Tech+Landmarks" 
+                     alt="Beautiful panoramic view of Ikorodu city landmarks showcasing the blend of traditional architecture and modern development, representing the city's growth as an emerging tech hub in Lagos State" 
+                     class="rounded-lg shadow-2xl mb-8 w-full">
+                
+                <h2 class="text-4xl font-bold text-white mb-6">Don't Miss Out on Ikorodu's Biggest Tech Event</h2>
+                <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                    Join over 2,000 tech enthusiasts, entrepreneurs, and industry leaders for a day of innovation, learning, and networking. Secure your spot at the Ikorodu Tech Fair 2026 and be part of shaping the future of technology in Lagos State.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                    <a href="https://forms.gle/example-registration-link" target="_blank" class="btn-primary inline-flex items-center px-10 py-4 rounded-lg font-bold text-white text-lg">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Register Now - Limited Spots
+                    </a>
+                    <div class="text-white">
+                        <i class="fas fa-clock mr-2"></i>
+                        Early Bird Pricing Ends Soon
+                    </div>
+                </div>
+                
+                <div class="text-blue-100">
+                    <p class="mb-2">Questions? Contact us:</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="mailto:info@ikorodutech.com" class="hover:text-white transition duration-300">
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@ikorodutech.com
+                        </a>
+                        <a href="tel:+2348012345678" class="hover:text-white transition duration-300">
+                            <i class="fas fa-phone mr-2"></i>
+                            +234 801 234 5678
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-microchip text-2xl text-blue-400 mr-2"></i>
+                        <span class="text-xl font-bold">Ikorodu Tech Fair 2026</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Connecting Innovation, Building Tomorrow. Join us for Lagos State's premier technology event.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#speakers" class="text-gray-300 hover:text-white transition duration-300">Speakers</a></li>
+                        <li><a href="#schedule" class="text-gray-300 hover:text-white transition duration-300">Schedule</a></li>
+                        <li><a href="#tickets" class="text-gray-300 hover:text-white transition duration-300">Tickets</a></li>
+                        <li><a href="#sponsors" class="text-gray-300 hover:text-white transition duration-300">Sponsors</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Event Info</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-calendar mr-2"></i>April 6, 2026</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Ikorodu, Lagos State</li>
+                        <li><i class="fas fa-users mr-2"></i>2,000+ Attendees</li>
+                        <li><i class="fas fa-microphone mr-2"></i>10+ Speakers</li>
+                        <li><i class="fas fa-laptop mr-2"></i>10+ Workshops</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:info@ikorodutech.com" class="hover:text-white transition duration-300">
+                                info@ikorodutech.com
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:+2348012345678" class="hover:text-white transition duration-300">
+                                +234 801 234 5678
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe mr-2"></i>
+                            <a href="#" class="hover:text-white transition duration-300">
+                                www.ikorodutech.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    &copy; 2024 Ikorodu Tech Fair. All rights reserved. | 
+                    <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-white transition duration-300">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('April 6, 2026 09:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(3, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '000';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9712093171d965e2',t:'MTc1NTUyNjY1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
