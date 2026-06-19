@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en"><head><script src="/_sdk/telemetry_sdk.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kadutech Cloud Services</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0b1d1a;
+      --ink-2: #12362f;
+      --cream: #f5f2e9;
+      --sage: #a5c9b7;
+      --mint: #dceee5;
+      --lime: #d7ef8a;
+      --muted: #b9c8c1;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--cream);
+      background: var(--ink);
+    }
+    .display { font-family: 'Fraunces', serif; }
+    .focus-ring:focus-visible {
+      outline: 2px solid var(--lime);
+      outline-offset: 4px;
+    }
+    .hero-shell {
+      background:
+        radial-gradient(circle at 16% 12%, rgba(165,201,183,.16), transparent 28%),
+        radial-gradient(circle at 83% 15%, rgba(215,239,138,.08), transparent 22%),
+        linear-gradient(180deg, #0b1d1a 0%, #0b1d1a 72%, #10261f 100%);
+    }
+    .grid-noise {
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 46px 46px;
+    }
+    .hero-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -18px 22px 24px -18px;
+      border: 1px solid rgba(215,239,138,.38);
+      border-radius: 28px;
+      z-index: 0;
+    }
+    .hero-img-wrap::after {
+      content: '';
+      position: absolute;
+      width: 136px;
+      height: 136px;
+      right: -28px;
+      bottom: -28px;
+      background: var(--lime);
+      border-radius: 24px;
+      z-index: 0;
+    }
+    .hero-img-wrap img { position: relative; z-index: 1; }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+    .mobile-menu.open { max-height: 360px; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: reveal .8s ease forwards;
+    }
+    .reveal-2 { animation-delay: .12s; }
+    .reveal-3 { animation-delay: .24s; }
+    .reveal-4 { animation-delay: .36s; }
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .service-card {
+      transition: transform .35s ease, border-color .35s ease, background .35s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(86,124,105,.45);
+      background: #fffefa;
+    }
+    .service-card:hover .service-icon {
+      transform: scale(1.06);
+    }
+    .service-icon { transition: transform .3s ease; }
+    .revenue-card {
+      transition: transform .35s ease, border-color .35s ease;
+    }
+    .revenue-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(21,57,47,.28);
+    }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full" style="background: rgb(11, 29, 26);">
+  <div class="w-full overflow-hidden">
+   <section class="hero-shell grid-noise">
+    <header data-template-id="site-header" class="canva-header w-full border-b border-white/10" style="background: rgba(11, 29, 26, 0.2);">
+     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="h-20 flex items-center justify-between"><a href="#top" class="focus-ring inline-flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full border border-[#d7ef8a]/70 flex items-center justify-center"><span class="w-3 h-3 rounded-full bg-[#d7ef8a]"></span>
+        </div><span data-template-id="brand-name" class="canva-text text-xl tracking-[-0.03em] font-semibold" style="color: rgb(245, 242, 233); font-weight: 600; font-style: normal; font-size: 20px;">Kadutech</span> </a>
+       <nav class="hidden lg:flex items-center gap-8 text-sm text-[#c7d3cd]" aria-label="Primary navigation"><a data-template-id="nav-overview" href="#overview" class="canva-link hover:text-white transition focus-ring" style="color: rgb(199, 211, 205); font-weight: 400; font-style: normal; font-size: 14px;">Overview</a> <a data-template-id="nav-services" href="#services" class="canva-link hover:text-white transition focus-ring" style="color: rgb(199, 211, 205); font-weight: 400; font-style: normal; font-size: 14px;">Services</a> <a data-template-id="nav-approach" href="#approach" class="canva-link hover:text-white transition focus-ring" style="color: rgb(199, 211, 205); font-weight: 400; font-style: normal; font-size: 14px;">Approach</a> <a data-template-id="nav-value" href="#value" class="canva-link hover:text-white transition focus-ring" style="color: rgb(199, 211, 205); font-weight: 400; font-style: normal; font-size: 14px;">Value</a>
+       </nav>
+       <div class="hidden lg:flex items-center"><a data-template-id="header-cta" href="#contact" class="canva-button focus-ring inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium transition hover:scale-[1.02]" style="background: rgb(215, 239, 138); color: rgb(11, 29, 26); font-weight: 500; font-style: normal; font-size: 14px;">Start a conversation</a>
+       </div><button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden focus-ring w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white"> <i data-lucide="menu" class="w-5 h-5"></i> </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu lg:hidden">
+       <nav class="py-4 border-t border-white/10 flex flex-col gap-4 text-[#dbe6df]" aria-label="Mobile navigation"><a data-template-id="mobile-nav-overview" href="#overview" class="canva-link py-1 focus-ring" style="color: rgb(219, 230, 223); font-weight: 400; font-style: normal; font-size: 16px;">Overview</a> <a data-template-id="mobile-nav-services" href="#services" class="canva-link py-1 focus-ring" style="color: rgb(219, 230, 223); font-weight: 400; font-style: normal; font-size: 16px;">Services</a> <a data-template-id="mobile-nav-approach" href="#approach" class="canva-link py-1 focus-ring" style="color: rgb(219, 230, 223); font-weight: 400; font-style: normal; font-size: 16px;">Approach</a> <a data-template-id="mobile-nav-value" href="#value" class="canva-link py-1 focus-ring" style="color: rgb(219, 230, 223); font-weight: 400; font-style: normal; font-size: 16px;">Value</a> <a data-template-id="mobile-header-cta" href="#contact" class="canva-button focus-ring inline-flex w-max items-center gap-2 px-5 py-3 rounded-full text-sm font-medium mb-4" style="background: rgb(215, 239, 138); color: rgb(11, 29, 26); font-weight: 500; font-style: normal; font-size: 14px;">Start a conversation</a>
+       </nav>
+      </div>
+     </div>
+    </header>
+    <main id="top">
+     <section class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-16 md:pt-24 pb-20 md:pb-28">
+      <div class="grid lg:grid-cols-[1.03fr_.97fr] gap-12 lg:gap-20 items-center">
+       <div>
+        <div class="reveal inline-flex items-center gap-3 mb-7"><span class="w-8 h-px bg-[#d7ef8a]"></span>
+         <p data-template-id="hero-eyebrow" class="canva-text uppercase tracking-[0.24em] text-xs font-medium" style="color: rgb(167, 205, 183); font-weight: 500; font-style: normal; font-size: 12px;">Cloud infrastructure for what’s next</p>
+        </div>
+        <h1 data-template-id="hero-title" class="canva-text display reveal reveal-2 text-[3.15rem] sm:text-[4rem] lg:text-[5.2rem] leading-[.96] tracking-[-0.055em] max-w-4xl" style="color: rgb(245, 242, 233); font-weight: 600; font-style: normal; font-size: 32px; line-height: 0.98;">Cloud that moves as fast as your ambition.</h1>
+        <p data-template-id="hero-description" class="canva-text reveal reveal-3 mt-7 max-w-xl text-lg leading-8 text-[#c0cec7]" style="color: rgb(192, 206, 199); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.65;">From collaboration platforms to secure hybrid environments, we help organisations build cloud ecosystems that are resilient, scalable, and ready for growth.</p>
+        <div class="reveal reveal-4 flex flex-col sm:flex-row gap-4 mt-9"><a data-template-id="hero-primary-cta" href="#services" class="canva-button focus-ring inline-flex justify-center items-center gap-2 px-6 py-4 rounded-full font-medium transition hover:scale-[1.02]" style="background: rgb(215, 239, 138); color: rgb(11, 29, 26); font-weight: 500; font-style: normal; font-size: 16px;">Explore cloud services</a> <a data-template-id="hero-secondary-cta" href="#approach" class="canva-button focus-ring inline-flex justify-center items-center gap-2 px-6 py-4 rounded-full font-medium border border-white/20 text-white hover:bg-white/5 transition" style="color: rgb(245, 242, 233); font-weight: 500; font-style: normal; font-size: 16px;">See our approach</a>
+        </div>
+        <div class="reveal reveal-4 mt-14 pt-7 border-t border-white/10 grid grid-cols-3 gap-5 max-w-xl">
+         <div>
+          <p data-template-id="hero-stat-1-number" class="canva-text display text-3xl md:text-4xl leading-none" style="color: rgb(245, 242, 233); font-weight: 600; font-style: normal; font-size: 16px;">8</p>
+          <p data-template-id="hero-stat-1-label" class="canva-text text-xs uppercase tracking-[0.16em] mt-3 text-[#93a79d]" style="color: rgb(147, 167, 157); font-weight: 500; font-style: normal; font-size: 10px;">Core services</p>
+         </div>
+         <div>
+          <p data-template-id="hero-stat-2-number" class="canva-text display text-3xl md:text-4xl leading-none" style="color: rgb(245, 242, 233); font-weight: 600; font-style: normal; font-size: 16px;">24/7</p>
+          <p data-template-id="hero-stat-2-label" class="canva-text text-xs uppercase tracking-[0.16em] mt-3 text-[#93a79d]" style="color: rgb(147, 167, 157); font-weight: 500; font-style: normal; font-size: 10px;">Cloud readiness</p>
+         </div>
+         <div>
+          <p data-template-id="hero-stat-3-number" class="canva-text display text-3xl md:text-4xl leading-none" style="color: rgb(245, 242, 233); font-weight: 600; font-style: normal; font-size: 16px;">3</p>
+          <p data-template-id="hero-stat-3-label" class="canva-text text-xs uppercase tracking-[0.16em] mt-3 text-[#93a79d]" style="color: rgb(147, 167, 157); font-weight: 500; font-style: normal; font-size: 10px;">Value streams</p>
+         </div>
+        </div>
+       </div>
+       <div class="hero-img-wrap relative reveal reveal-3 mt-4 lg:mt-0"><img data-template-id="hero-image" loading="lazy" class="canva-image w-full aspect-[4/5] object-cover rounded-[28px] grayscale-[6%]" src="https://images.pexels.com/photos/17489163/pexels-photo-17489163.jpeg" alt="Close-up of a modern server unit in a blue-lit data center environment.">
+        <div data-template-id="hero-badge" class="canva-card absolute z-[2] left-5 bottom-5 sm:left-7 sm:bottom-7 rounded-2xl px-5 py-4 max-w-[230px] backdrop-blur-md border border-white/10" style="background: rgba(11, 29, 26, 0.82);">
+         <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#d7ef8a] text-[#0b1d1a] flex items-center justify-center"><i data-lucide="cloud" class="w-5 h-5"></i>
+          </div>
+          <p data-template-id="hero-badge-text" class="canva-text text-sm leading-5 font-medium" style="color: rgb(245, 242, 233); font-weight: 500; font-style: normal; font-size: 14px;">Secure, scalable cloud foundations for modern business.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+   </section>
+   <section id="overview" class="w-full bg-[#f5f2e9] text-[#14332b]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28">
+     <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-10 lg:gap-20 items-end">
+      <div>
+       <p data-template-id="overview-eyebrow" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold text-[#5e806f] mb-5" style="color: rgb(94, 128, 111); font-weight: 600; font-style: normal; font-size: 12px;">Why cloud, why now</p>
+       <h2 data-template-id="overview-title" class="canva-text display text-[2.6rem] md:text-[4.2rem] leading-[1] tracking-[-0.05em]" style="color: rgb(20, 51, 43); font-weight: 600; font-style: normal; font-size: 24px;">Build with flexibility. Operate with confidence.</h2>
+      </div>
+      <p data-template-id="overview-text" class="canva-text text-[#547167] leading-8 text-lg max-w-2xl" style="color: rgb(84, 113, 103); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Cloud is no longer just a technology decision. It is an operating model for agility, continuity, and smarter growth. Kadutech helps organisations move beyond fragmented systems into connected, secure, and future-ready environments.</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-5 mt-14">
+      <article data-template-id="overview-card-1" class="canva-card rounded-2xl border border-[#d7ded7] bg-[#fffdf7] p-6" style="background: rgb(255, 253, 247);">
+       <div class="w-11 h-11 rounded-full bg-[#dceee5] text-[#184838] flex items-center justify-center mb-8"><i data-lucide="move-up-right" class="w-5 h-5"></i>
+       </div>
+       <p data-template-id="overview-card-1-number" class="canva-text display text-3xl text-[#6a8b7b]" style="color: rgb(106, 139, 123); font-weight: 600; font-style: normal; font-size: 16px;">01</p>
+       <h3 data-template-id="overview-card-1-title" class="canva-text mt-5 font-semibold text-lg" style="color: rgb(20, 51, 43); font-weight: 600; font-style: normal; font-size: 18px;">Scale without friction</h3>
+       <p data-template-id="overview-card-1-text" class="canva-text mt-3 text-sm leading-6 text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">Add capacity, users, and tools without rebuilding from the ground up.</p>
+      </article>
+      <article data-template-id="overview-card-2" class="canva-card rounded-2xl border border-[#d7ded7] bg-[#fffdf7] p-6" style="background: rgb(255, 253, 247);">
+       <div class="w-11 h-11 rounded-full bg-[#dceee5] text-[#184838] flex items-center justify-center mb-8"><i data-lucide="shield-check" class="w-5 h-5"></i>
+       </div>
+       <p data-template-id="overview-card-2-number" class="canva-text display text-3xl text-[#6a8b7b]" style="color: rgb(106, 139, 123); font-weight: 600; font-style: normal; font-size: 16px;">02</p>
+       <h3 data-template-id="overview-card-2-title" class="canva-text mt-5 font-semibold text-lg" style="color: rgb(20, 51, 43); font-weight: 600; font-style: normal; font-size: 18px;">Protect what matters</h3>
+       <p data-template-id="overview-card-2-text" class="canva-text mt-3 text-sm leading-6 text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">Secure data, identities, devices, and access across every layer.</p>
+      </article>
+      <article data-template-id="overview-card-3" class="canva-card rounded-2xl border border-[#d7ded7] bg-[#fffdf7] p-6" style="background: rgb(255, 253, 247);">
+       <div class="w-11 h-11 rounded-full bg-[#dceee5] text-[#184838] flex items-center justify-center mb-8"><i data-lucide="refresh-cw" class="w-5 h-5"></i>
+       </div>
+       <p data-template-id="overview-card-3-number" class="canva-text display text-3xl text-[#6a8b7b]" style="color: rgb(106, 139, 123); font-weight: 600; font-style: normal; font-size: 16px;">03</p>
+       <h3 data-template-id="overview-card-3-title" class="canva-text mt-5 font-semibold text-lg" style="color: rgb(20, 51, 43); font-weight: 600; font-style: normal; font-size: 18px;">Stay ready for change</h3>
+       <p data-template-id="overview-card-3-text" class="canva-text mt-3 text-sm leading-6 text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">Create infrastructure that adapts as your business, teams, and markets evolve.</p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="services" class="w-full bg-[#ece7db] text-[#14332b]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28">
+     <div class="grid lg:grid-cols-[.8fr_1fr] gap-8 lg:gap-20 items-end mb-12">
+      <div>
+       <p data-template-id="services-eyebrow" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold text-[#648575] mb-4" style="color: rgb(100, 133, 117); font-weight: 600; font-style: normal; font-size: 12px;">Cloud services</p>
+       <h2 data-template-id="services-title" class="canva-text display text-[2.6rem] md:text-[4.2rem] leading-[1] tracking-[-0.05em]" style="color: rgb(20, 51, 43); font-weight: 600; font-style: normal; font-size: 24px;">Everything you need to move, work, and grow in the cloud.</h2>
+      </div>
+      <p data-template-id="services-intro" class="canva-text max-w-xl text-[#5c746a] leading-8 text-lg lg:justify-self-end" style="color: rgb(92, 116, 106); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Whether you are modernising one platform or rethinking your entire infrastructure, we bring the strategy and technical depth to make it work.</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <article data-template-id="service-card-1" class="canva-card service-card rounded-2xl p-6 min-h-[250px] border border-[#d6ddd6] bg-[#fffdf7]" style="background: rgb(255, 253, 247);">
+       <div class="service-icon w-11 h-11 rounded-full bg-[#dceee5] flex items-center justify-center text-[#184838] mb-7">
+        <i data-lucide="briefcase-business" class="w-5 h-5"></i>
+       </div>
+       <h3 data-template-id="service-1-title" class="canva-text display text-2xl leading-tight tracking-[-0.03em]" style="color: rgb(23, 57, 47); font-weight: 600; font-style: normal; font-size: 19px;">Microsoft 365 Deployment</h3>
+       <p data-template-id="service-1-text" class="canva-text mt-4 leading-7 text-sm text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.55;">Roll out collaborative workspaces, email, files, and productivity tools with confidence.</p>
+      </article>
+      <article data-template-id="service-card-2" class="canva-card service-card rounded-2xl p-6 min-h-[250px] border border-[#d6ddd6] bg-[#fffdf7]" style="background: rgb(255, 253, 247);">
+       <div class="service-icon w-11 h-11 rounded-full bg-[#dceee5] flex items-center justify-center text-[#184838] mb-7">
+        <i data-lucide="server" class="w-5 h-5"></i>
+       </div>
+       <h3 data-template-id="service-2-title" class="canva-text display text-2xl leading-tight tracking-[-0.03em]" style="color: rgb(23, 57, 47); font-weight: 600; font-style: normal; font-size: 19px;">Azure Management</h3>
+       <p data-template-id="service-2-text" class="canva-text mt-4 leading-7 text-sm text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.55;">Design, deploy, and optimise Azure environments that support performance and scale.</p>
+      </article>
+      <article data-template-id="service-card-3" class="canva-card service-card rounded-2xl p-6 min-h-[250px] border border-[#d6ddd6] bg-[#fffdf7]" style="background: rgb(255, 253, 247);">
+       <div class="service-icon w-11 h-11 rounded-full bg-[#dceee5] flex items-center justify-center text-[#184838] mb-7">
+        <i data-lucide="users" class="w-5 h-5"></i>
+       </div>
+       <h3 data-template-id="service-3-title" class="canva-text display text-2xl leading-tight tracking-[-0.03em]" style="color: rgb(23, 57, 47); font-weight: 600; font-style: normal; font-size: 19px;">Google Workspace</h3>
+       <p data-template-id="service-3-text" class="canva-text mt-4 leading-7 text-sm text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.55;">Enable seamless communication, collaboration, and productivity across your teams.</p>
+      </article>
+      <article data-template-id="service-card-4" class="canva-card service-card rounded-2xl p-6 min-h-[250px] border border-[#d6ddd6] bg-[#fffdf7]" style="background: rgb(255, 253, 247);">
+       <div class="service-icon w-11 h-11 rounded-full bg-[#dceee5] flex items-center justify-center text-[#184838] mb-7">
+        <i data-lucide="cloud-upload" class="w-5 h-5"></i>
+       </div>
+       <h3 data-template-id="service-4-title" class="canva-text display text-2xl leading-tight tracking-[-0.03em]" style="color: rgb(23, 57, 47); font-weight: 600; font-style: normal; font-size: 19px;">Cloud Migration</h3>
+       <p data-template-id="service-4-text" class="canva-text mt-4 leading-7 text-sm text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.55;">Move from legacy infrastructure to cloud with less disruption and clearer control.</p>
+      </article>
+      <article data-template-id="service-card-5" class="canva-card service-card rounded-2xl p-6 min-h-[250px] border border-[#d6ddd6] bg-[#fffdf7]" style="background: rgb(255, 253, 247);">
+       <div class="service-icon w-11 h-11 rounded-full bg-[#dceee5] flex items-center justify-center text-[#184838] mb-7">
+        <i data-lucide="archive" class="w-5 h-5"></i>
+       </div>
+       <h3 data-template-id="service-5-title" class="canva-text display text-2xl leading-tight tracking-[-0.03em]" style="color: rgb(23, 57, 47); font-weight: 600; font-style: normal; font-size: 19px;">Backup Solutions</h3>
+       <p data-template-id="service-5-text" class="canva-text mt-4 leading-7 text-sm text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.55;">Protect business-critical data with resilient backup and recovery frameworks.</p>
+      </article>
+      <article data-template-id="service-card-6" class="canva-card service-card rounded-2xl p-6 min-h-[250px] border border-[#d6ddd6] bg-[#fffdf7]" style="background: rgb(255, 253, 247);">
+       <div class="service-icon w-11 h-11 rounded-full bg-[#dceee5] flex items-center justify-center text-[#184838] mb-7">
+        <i data-lucide="shield" class="w-5 h-5"></i>
+       </div>
+       <h3 data-template-id="service-6-title" class="canva-text display text-2xl leading-tight tracking-[-0.03em]" style="color: rgb(23, 57, 47); font-weight: 600; font-style: normal; font-size: 19px;">Cloud Security</h3>
+       <p data-template-id="service-6-text" class="canva-text mt-4 leading-7 text-sm text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.55;">Build secure cloud environments with visibility, governance, and protection built in.</p>
+      </article>
+      <article data-template-id="service-card-7" class="canva-card service-card rounded-2xl p-6 min-h-[250px] border border-[#d6ddd6] bg-[#fffdf7]" style="background: rgb(255, 253, 247);">
+       <div class="service-icon w-11 h-11 rounded-full bg-[#dceee5] flex items-center justify-center text-[#184838] mb-7">
+        <i data-lucide="key-round" class="w-5 h-5"></i>
+       </div>
+       <h3 data-template-id="service-7-title" class="canva-text display text-2xl leading-tight tracking-[-0.03em]" style="color: rgb(23, 57, 47); font-weight: 600; font-style: normal; font-size: 19px;">Identity &amp; Access</h3>
+       <p data-template-id="service-7-text" class="canva-text mt-4 leading-7 text-sm text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.55;">Give the right people the right access while reducing risk across your ecosystem.</p>
+      </article>
+      <article data-template-id="service-card-8" class="canva-card service-card rounded-2xl p-6 min-h-[250px] border border-[#d6ddd6] bg-[#fffdf7]" style="background: rgb(255, 253, 247);">
+       <div class="service-icon w-11 h-11 rounded-full bg-[#dceee5] flex items-center justify-center text-[#184838] mb-7">
+        <i data-lucide="network" class="w-5 h-5"></i>
+       </div>
+       <h3 data-template-id="service-8-title" class="canva-text display text-2xl leading-tight tracking-[-0.03em]" style="color: rgb(23, 57, 47); font-weight: 600; font-style: normal; font-size: 19px;">Hybrid Infrastructure</h3>
+       <p data-template-id="service-8-text" class="canva-text mt-4 leading-7 text-sm text-[#668075]" style="color: rgb(102, 128, 117); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.55;">Connect on-premise and cloud systems into one stronger, more flexible operating model.</p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="approach" class="w-full bg-[#f5f2e9] text-[#14332b]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28">
+     <div data-template-id="approach-panel" class="canva-panel rounded-[28px] p-7 md:p-10 lg:p-14 text-white" style="background: rgb(21, 57, 47);">
+      <div class="grid lg:grid-cols-[.95fr_1.05fr] gap-12 lg:gap-16 items-center">
+       <div>
+        <p data-template-id="approach-eyebrow" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold text-[#a7d0b8] mb-5" style="color: rgb(167, 208, 184); font-weight: 600; font-style: normal; font-size: 12px;">How we move you forward</p>
+        <h2 data-template-id="approach-title" class="canva-text display text-[2.4rem] md:text-[3.8rem] leading-[1.02] tracking-[-0.05em]" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 24px;">A cloud journey that feels considered, not complicated.</h2>
+        <p data-template-id="approach-text" class="canva-text mt-6 text-[#c7d9cf] leading-8" style="color: rgb(199, 217, 207); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.65;">We meet you where you are, then design a practical path to where you need to be. Every decision is shaped by your operations, your people, and your long-term goals.</p>
+        <div class="grid sm:grid-cols-3 gap-5 mt-10 pt-7 border-t border-white/10">
+         <div>
+          <p data-template-id="approach-step-1-number" class="canva-text display text-3xl text-[#d7ef8a]" style="color: rgb(215, 239, 138); font-weight: 600; font-style: normal; font-size: 16px;">01</p>
+          <h3 data-template-id="approach-step-1-title" class="canva-text mt-4 font-semibold" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 19px;">Assess clearly</h3>
+          <p data-template-id="approach-step-1-text" class="canva-text mt-2 text-sm leading-6 text-[#b8cabf]" style="color: rgb(184, 202, 191); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">We map current systems, risks, and opportunities before we move.</p>
+         </div>
+         <div>
+          <p data-template-id="approach-step-2-number" class="canva-text display text-3xl text-[#d7ef8a]" style="color: rgb(215, 239, 138); font-weight: 600; font-style: normal; font-size: 16px;">02</p>
+          <h3 data-template-id="approach-step-2-title" class="canva-text mt-4 font-semibold" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 19px;">Design wisely</h3>
+          <p data-template-id="approach-step-2-text" class="canva-text mt-2 text-sm leading-6 text-[#b8cabf]" style="color: rgb(184, 202, 191); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">We build the right cloud architecture for your actual business needs.</p>
+         </div>
+         <div>
+          <p data-template-id="approach-step-3-number" class="canva-text display text-3xl text-[#d7ef8a]" style="color: rgb(215, 239, 138); font-weight: 600; font-style: normal; font-size: 16px;">03</p>
+          <h3 data-template-id="approach-step-3-title" class="canva-text mt-4 font-semibold" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 19px;">Manage continuously</h3>
+          <p data-template-id="approach-step-3-text" class="canva-text mt-2 text-sm leading-6 text-[#b8cabf]" style="color: rgb(184, 202, 191); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">We help you optimise, secure, and improve long after go-live.</p>
+         </div>
+        </div>
+       </div>
+       <div class="relative"><img data-template-id="approach-image" loading="lazy" class="canva-image w-full aspect-[4/5] object-cover rounded-[24px]" src="https://images.pexels.com/photos/17485706/pexels-photo-17485706.png" alt="Abstract 3D render of blue and pink digital blocks. Perfect for technology-themed content.">
+        <div data-template-id="approach-note" class="canva-card absolute left-4 bottom-4 sm:left-6 sm:bottom-6 bg-[#f5f2e9] text-[#15392f] rounded-2xl px-5 py-4 max-w-[230px]" style="background: rgb(245, 242, 233);">
+         <p data-template-id="approach-note-text" class="canva-text text-sm leading-6" style="color: rgb(21, 57, 47); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">Cloud migration with less noise, more clarity, and stronger outcomes.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   <section id="contact" class="w-full bg-[#0b1d1a] text-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 md:py-28">
+     <div class="grid lg:grid-cols-[1fr_auto] gap-10 items-end">
+      <div>
+       <p data-template-id="contact-eyebrow" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold text-[#a8cfb9] mb-5" style="color: rgb(168, 207, 185); font-weight: 600; font-style: normal; font-size: 12px;">Let’s build in the cloud</p>
+       <h2 data-template-id="contact-title" class="canva-text display text-[3rem] md:text-[5rem] leading-[.98] tracking-[-0.05em] max-w-4xl" style="color: rgb(245, 242, 233); font-weight: 600; font-style: normal; font-size: 24px;">Ready to build a stronger cloud foundation?</h2>
+      </div><a data-template-id="contact-cta" href="mailto:contact@kadutech.org" class="canva-button focus-ring inline-flex items-center justify-center gap-3 px-7 py-5 rounded-full font-medium transition hover:scale-[1.02] w-max" style="background: rgb(215, 239, 138); color: rgb(11, 29, 26); font-weight: 500; font-style: normal; font-size: 16px;">contact@kadutech.org</a>
+     </div>
+    </div>
+   </section>
+   <footer data-template-id="site-footer" class="canva-footer w-full bg-[#071511] text-white border-t border-white/10" style="background: rgb(7, 21, 17);">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-12">
+     <div class="grid md:grid-cols-[1.2fr_.8fr_.8fr_.9fr] gap-10">
+      <div>
+       <div class="inline-flex items-center gap-3 mb-5">
+        <div class="w-8 h-8 rounded-full border border-[#d7ef8a]/70 flex items-center justify-center"><span class="w-2.5 h-2.5 rounded-full bg-[#d7ef8a]"></span>
+        </div><span data-template-id="footer-brand" class="canva-text text-lg font-semibold" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 18px;">Kadutech</span>
+       </div>
+       <p data-template-id="footer-description" class="canva-text max-w-xs text-sm leading-6 text-[#9eb0a7]" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5;">Technology solutions and talent pathways for an Africa that’s building boldly.</p>
+      </div>
+      <div>
+       <h3 data-template-id="footer-col-1-title" class="canva-text text-sm font-semibold mb-4" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 14px;">Company</h3>
+       <div class="space-y-3 text-sm text-[#9eb0a7]">
+        <p data-template-id="footer-col-1-item-1" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">About</p>
+        <p data-template-id="footer-col-1-item-2" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">Approach</p>
+        <p data-template-id="footer-col-1-item-3" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">Careers</p>
+       </div>
+      </div>
+      <div>
+       <h3 data-template-id="footer-col-2-title" class="canva-text text-sm font-semibold mb-4" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 14px;">Solutions</h3>
+       <div class="space-y-3 text-sm text-[#9eb0a7]">
+        <p data-template-id="footer-col-2-item-1" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">Cloud</p>
+        <p data-template-id="footer-col-2-item-2" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">Cybersecurity</p>
+        <p data-template-id="footer-col-2-item-3" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">Consulting</p>
+       </div>
+      </div>
+      <div>
+       <h3 data-template-id="footer-col-3-title" class="canva-text text-sm font-semibold mb-4" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 14px;">Connect</h3>
+       <div class="space-y-3 text-sm text-[#9eb0a7]">
+        <p data-template-id="footer-col-3-item-1" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">Lagos, Nigeria</p>
+        <p data-template-id="footer-col-3-item-2" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">contact@kadutech.org</p>
+        <p data-template-id="footer-col-3-item-3" class="canva-text" style="color: rgb(158, 176, 167); font-weight: 400; font-style: normal; font-size: 14px;">+234 7062025993</p>
+       </div>
+      </div>
+     </div>
+     <div class="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-[#82958b]">
+      <p data-template-id="footer-copyright" class="canva-text" style="color: rgb(130, 149, 139); font-weight: 400; font-style: normal; font-size: 12px;">© 2026 Kadutech. All rights reserved.</p>
+      <p data-template-id="footer-tagline" class="canva-text" style="color: rgb(130, 149, 139); font-weight: 400; font-style: normal; font-size: 12px;">Designed for progress. Built for impact.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script src="/_sdk/editing_sdk.js"></script>
+  <script>
+    lucide.createIcons();
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.innerHTML = isOpen ? '<i data-lucide="x" class="w-5 h-5"></i>' : '<i data-lucide="menu" class="w-5 h-5"></i>';
+      lucide.createIcons();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '<i data-lucide="menu" class="w-5 h-5"></i>';
+        lucide.createIcons();
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0dcc28a264b9a08',t:'MTc4MTgxMTU2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body></html>
